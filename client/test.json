@@ -1,0 +1,244 @@
+[
+  {
+    "description":"30 minutes of walking per day or 30 minutes of brisk cycling several times a week can cut heart disease risk by up to 50%, and reduces the risk of some cancers, depression, obesity, diabetes, and osteoporosis.",
+    "headerImage":"http://3.bp.blogspot.com/-j7J6v9iaQ_8/UaNzLcgxRII/AAAAAAABAhg/ALbUM7Pz4ok/s782/joanna-goddard-best-bike-rides-nyc-.jpg",
+    "icon":"icon-bicycle.svg",
+    "id":0,
+    "intro":{
+      "imageUrl":"http://3.bp.blogspot.com/-j7J6v9iaQ_8/UaNzLcgxRII/AAAAAAABAhg/ALbUM7Pz4ok/s782/joanna-goddard-best-bike-rides-nyc-.jpg"
+    },
+    "score":"100",
+    "state":"active",
+    "tasks":[
+      {
+        "intro":{
+          "caption":"Find the perfect path",
+          "duration":"2 min",
+          "videoUrl":"//www.youtube.com/embed/aUaInS6HIGo"
+        },
+        "mapSearchTerm":"Walking trail",
+        "photos":[
+          "https://farm3.staticflickr.com/2295/2191873900_bb66c78360_b.jpg",
+          "https://farm3.staticflickr.com/2295/2191873900_bb66c78360_b.jpg",
+          "https://farm3.staticflickr.com/2295/2191873900_bb66c78360_b.jpg"
+        ],
+        "steps":[
+          {
+            "content":"A pair of comfortable shoes are essential for a nice walk. Depending on the weather you may also want to bring your sunglasses and some water with you.",
+            "title":"Get Ready"
+          },
+          {
+            "content":"You don’t have to walk far. Even a short stroll to your neighborhood store can save you gas and help you get fit.",
+            "title":"Think about where you’d like to go"
+          },
+          {
+            "content":"Just go out and walk around to explore your neighborhood.",
+            "title":"Go walking"
+          }
+        ],
+        "tags":[
+          "Health",
+          "Money",
+          "Discovery"
+        ],
+        "tips":[
+          {
+            "content":"A study showed that short bouts of brisk walking (three 10-minute walks per day) resulted in similar improvements in fitness and were at least as effective in decreasing body fatness as long bouts (one 30 minute walk per day)"
+          }
+        ],
+        "title":"Walk a bunch"
+      },
+      {
+        "intro":{
+          "videoUrl":"http://www.youtube.com/watch?v=MJ17szvj1gk"
+        },
+        "photos":[
+          "https://flic.kr/p/2ayhUe",
+          "http://www.mywedding.com/articles/wp-content/gallery/ashleydanielmoyer/15-couple-riding-tall-bicycle.jpg"
+        ],
+        "steps":[
+          {
+            "content":"Go to a local bicycle store to get some expert help on finding the right bike that fits your lifestyle, preference, size, and budget.",
+            "title":"Find a bike"
+          },
+          {
+            "content":"Where do you want to go? A scenic spot? A nice cafe? Find a nice route that takes your there safely.",
+            "title":"Plan a route"
+          },
+          {
+            "content":"Wear a helmet. Use bike lights. Check and signal before turning. Just following a few simple rules will enhance your whole riding experience.",
+            "title":"Ride safely"
+          }
+        ],
+        "tags":[
+          "Health",
+          "Money",
+          "Discovery"
+        ],
+        "tips":[
+          "Wearing a helmet makes cycling 85% safer in New York City. (New York, NY)",
+          "Bicycles save you money, keep you in shape, and help you experience your city in new ways. (Everywhere)",
+          "Cycling is usually the fastest way to travel for trips of up to 6 miles in the city. (Everywhere)"
+        ],
+        "title":"Ride a bike"
+      },
+      {
+        "photos":[
+          "http://upload.wikimedia.org/wikipedia/commons/thumb/1/16/E53_St_Citibike_station_loaded_jeh.jpg/640px-E53_St_Citibike_station_loaded_jeh.jpg",
+          "https://flic.kr/p/evZDFN",
+          "https://flic.kr/p/6PpwT5",
+          "https://flic.kr/p/fEycGE",
+          "https://flic.kr/p/e!vZDFN",
+          "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Hangzhou_bike_sharing_station.jpg/640px-Hangzhou_bike_sharing_station.jpg",
+          "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Capital_Bikeshare_DC_09_2010_508.JPG/320px-Capital_Bikeshare_DC_09_2010_508.JPG"
+        ],
+        "steps":[
+          {
+            "content":"Find a company that offers car or bicycle sharing system close to you.",
+            "title":"Locate rental"
+          },
+          {
+            "content":"Sign up for an account",
+            "title":"Sign up"
+          },
+          {
+            "content":"Reserve a car or bike if/when needed",
+            "title":"Reserve"
+          },
+          {
+            "title":"Pick up and drive"
+          }
+        ],
+        "tags":[
+          "Money"
+        ],
+        "tips":[
+          "Smart cards allow the bicycles to be returned to any station in the system, which makes it easy to ride one-way to work and school."
+        ],
+        "title":"Rent instead of Own"
+      }
+    ],
+    "title":"Go for a walk"
+  },
+{
+    "description":"30 minutes of walking per day or 30 minutes of brisk cycling several times a week can cut heart disease risk by up to 50%, and reduces the risk of some cancers, depression, obesity, diabetes, and osteoporosis.",
+    "headerImage":"http://3.bp.blogspot.com/-j7J6v9iaQ_8/UaNzLcgxRII/AAAAAAABAhg/ALbUM7Pz4ok/s782/joanna-goddard-best-bike-rides-nyc-.jpg",
+    "icon":"icon-bicycle.svg",
+    "id":0,
+    "intro":{
+      "imageUrl":"http://3.bp.blogspot.com/-j7J6v9iaQ_8/UaNzLcgxRII/AAAAAAABAhg/ALbUM7Pz4ok/s782/joanna-goddard-best-bike-rides-nyc-.jpg"
+    },
+    "score":"100",
+    "state":"active",
+    "tasks":[
+      {
+        "intro":{
+          "caption":"Find the perfect path",
+          "duration":"2 min",
+          "videoUrl":"//www.youtube.com/embed/aUaInS6HIGo"
+        },
+        "mapSearchTerm":"Walking trail",
+        "photos":[
+          "https://farm3.staticflickr.com/2295/2191873900_bb66c78360_b.jpg",
+          "https://farm3.staticflickr.com/2295/2191873900_bb66c78360_b.jpg",
+          "https://farm3.staticflickr.com/2295/2191873900_bb66c78360_b.jpg"
+        ],
+        "steps":[
+          {
+            "content":"A pair of comfortable shoes are essential for a nice walk. Depending on the weather you may also want to bring your sunglasses and some water with you.",
+            "title":"Get Ready"
+          },
+          {
+            "content":"You don’t have to walk far. Even a short stroll to your neighborhood store can save you gas and help you get fit.",
+            "title":"Think about where you’d like to go"
+          },
+          {
+            "content":"Just go out and walk around to explore your neighborhood.",
+            "title":"Go walking"
+          }
+        ],
+        "tags":[
+          "Health",
+          "Money",
+          "Discovery"
+        ],
+        "tips":[
+          {
+            "content":"A study showed that short bouts of brisk walking (three 10-minute walks per day) resulted in similar improvements in fitness and were at least as effective in decreasing body fatness as long bouts (one 30 minute walk per day)"
+          }
+        ],
+        "title":"Walk a bunch"
+      },
+      {
+        "intro":{
+          "videoUrl":"http://www.youtube.com/watch?v=MJ17szvj1gk"
+        },
+        "photos":[
+          "https://flic.kr/p/2ayhUe",
+          "http://www.mywedding.com/articles/wp-content/gallery/ashleydanielmoyer/15-couple-riding-tall-bicycle.jpg"
+        ],
+        "steps":[
+          {
+            "content":"Go to a local bicycle store to get some expert help on finding the right bike that fits your lifestyle, preference, size, and budget.",
+            "title":"Find a bike"
+          },
+          {
+            "content":"Where do you want to go? A scenic spot? A nice cafe? Find a nice route that takes your there safely.",
+            "title":"Plan a route"
+          },
+          {
+            "content":"Wear a helmet. Use bike lights. Check and signal before turning. Just following a few simple rules will enhance your whole riding experience.",
+            "title":"Ride safely"
+          }
+        ],
+        "tags":[
+          "Health",
+          "Money",
+          "Discovery"
+        ],
+        "tips":[
+          "Wearing a helmet makes cycling 85% safer in New York City. (New York, NY)",
+          "Bicycles save you money, keep you in shape, and help you experience your city in new ways. (Everywhere)",
+          "Cycling is usually the fastest way to travel for trips of up to 6 miles in the city. (Everywhere)"
+        ],
+        "title":"Ride a bike"
+      },
+      {
+        "photos":[
+          "http://upload.wikimedia.org/wikipedia/commons/thumb/1/16/E53_St_Citibike_station_loaded_jeh.jpg/640px-E53_St_Citibike_station_loaded_jeh.jpg",
+          "https://flic.kr/p/evZDFN",
+          "https://flic.kr/p/6PpwT5",
+          "https://flic.kr/p/fEycGE",
+          "https://flic.kr/p/e!vZDFN",
+          "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Hangzhou_bike_sharing_station.jpg/640px-Hangzhou_bike_sharing_station.jpg",
+          "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Capital_Bikeshare_DC_09_2010_508.JPG/320px-Capital_Bikeshare_DC_09_2010_508.JPG"
+        ],
+        "steps":[
+          {
+            "content":"Find a company that offers car or bicycle sharing system close to you.",
+            "title":"Locate rental"
+          },
+          {
+            "content":"Sign up for an account",
+            "title":"Sign up"
+          },
+          {
+            "content":"Reserve a car or bike if/when needed",
+            "title":"Reserve"
+          },
+          {
+            "title":"Pick up and drive"
+          }
+        ],
+        "tags":[
+          "Money"
+        ],
+        "tips":[
+          "Smart cards allow the bicycles to be returned to any station in the system, which makes it easy to ride one-way to work and school."
+        ],
+        "title":"Rent instead of Own"
+      }
+    ],
+    "title":"Go for a walk"
+  }
+]

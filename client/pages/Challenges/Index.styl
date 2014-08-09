@@ -1,0 +1,23 @@
+@require './mixins/colors'
+@require './mixins/icons'
+
+.user-bar
+  overflow: auto
+  padding: .75em 1em
+  border-top: 1px solid #858585
+
+  span.points
+    float: right
+    color: teal
+    font-weight: bold
+    font-size: 1.2em
+    impact-icon()
+    padding-left: 2.5%
+
+  span.welcome
+    float: left
+    opacity: .45
+    font-size: 1em
+
+.challenge-index-page
+  overflow: auto

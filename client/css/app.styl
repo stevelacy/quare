@@ -1,0 +1,77 @@
+@require 'nib'
+@require './mixins/hardware'
+@require './mixins/fonts'
+@require './mixins/colors'
+
+// force hardware accelerated css
+html, body
+  hardware()
+  better-font()
+  helvetica()
+
+  background-color: bgColor
+  color: fgColor
+  font-size: 1em
+  line-height: 1.4
+
+a
+  color: teal
+  text-decoration: none
+
+.pu-icon
+  font-family 'pileup'
+  speak none
+  font-style normal
+  font-weight normal
+  font-variant normal
+  text-transform none
+  line-height 1
+
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+.button
+  background: none
+  color: #fff
+  border-radius: 20px
+  border: 1px solid #fff
+  font-weight: bold
+  font-size: 12px
+  padding: 10px
+  min-width: 150px
+  letter-spacing: 2px
+
+.bar
+  border: none
+  background-color: bgColor
+  height: 64px
+  .icon
+    padding-top: 20px
+    padding-bottom: 20px
+  .btn-link, .title
+    line-height: 64px
+  .title
+    color: fgColor
+    font-size: 28px
+  .action-link
+    color: teal
+    display: block
+    height: 100%
+.bar-nav-dark
+  background-color grey
+
+.content
+  background-color: bgColor
+.content-padded
+  background-color: bgColor
+
+.fullscreen
+  fullscreen()
+
+::selection
+  text-shaodw: none
+  background-color: #b3d4fc
+  color: #fff
+
+body.open-modal .content
+  overflow hidden
