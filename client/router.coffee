@@ -1,6 +1,6 @@
 define (require) ->
 
-  {app, middleware} = require "vendor/dermis"
+  {app, middleware} = require 'vendor/dermis'
 
   APPNAME = _serverConfig.name
 

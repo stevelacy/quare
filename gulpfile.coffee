@@ -2,9 +2,6 @@ path = require "path"
 gulp = require "gulp"
 gutil = require "gulp-util"
 
-
-
-
 jade = require "gulp-jade"
 csso = require "gulp-csso"
 cache = require "gulp-cached"
@@ -23,10 +20,12 @@ autoprefixer = require "autoprefixer-stylus"
 autowatch = require "gulp-autowatch"
 
 cssSupport = [
-  "last 5 versions",
-  "> 1%",
-  "ie 8", "ie 7",
-  "Android", "Android 4",
+  "last 5 versions"
+  "> 1%"
+  "ie 8"
+  "ie 7"
+  "Android"
+  "Android 4"
   "BlackBerry 10"
 ]
 

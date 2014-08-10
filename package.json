@@ -1,4 +1,6 @@
 {
+  "name": "Quare",
+  "author": "Steve Lacy",
   "dependencies": {
     "bunyan": "^1.0.0",
     "compression": "^1.0.10",

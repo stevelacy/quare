@@ -9,9 +9,9 @@ log = require '../lib/log'
 toobusy.maxLag 10
 
 app = express()
-app.disable "x-powered-by"
+app.disable 'x-powered-by'
 app.use compress()
-app.use express.static join __dirname, "../public"
+app.use express.static join __dirname, '../public'
 
 app.use (err, req, res, next) ->
   log.error err.stack
