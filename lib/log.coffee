@@ -1,5 +1,5 @@
-bunyan = require "bunyan"
-config = require "../config"
+bunyan = require 'bunyan'
+config = require '../config'
 
 serializers =
   req: (req) ->

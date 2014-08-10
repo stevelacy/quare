@@ -1,10 +1,10 @@
-{join} = require "path"
-express = require "express"
-toobusy = require "toobusy"
-compress = require "compression"
+{join} = require 'path'
+express = require 'express'
+toobusy = require 'toobusy'
+compress = require 'compression'
 
-config = require "../config"
-log = require "../lib/log"
+config = require '../config'
+log = require '../lib/log'
 
 toobusy.maxLag 10
 
