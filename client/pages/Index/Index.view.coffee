@@ -1,11 +1,11 @@
 define (require) ->
 
   {div, h1, button, br, span, img, a} = React.DOM
-  Dermis = require "vendor/dermis"
+  Dermis = require 'vendor/dermis'
 
   Dermis.view
     goNext: ->
-      page "/profile"
+      page '/profile'
 
     render: ->
       div {className: "main"},
