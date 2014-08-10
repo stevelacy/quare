@@ -17,13 +17,3 @@ define (require) ->
               p {className: "location"}, "San Francisco"
               p {className: "impact-score"},
                 span {}, "280"
-
-        div {className: "block my-footprint"},
-          a {className: "action-link", href: "#"}, "Edit"
-          h2 {}, "My Footprint"
-
-        div {className: "block achievements"},
-          h2 {}, "Achievements"
-
-        div {className: "block saved-for-later"},
-          h2 {}, "Saved For Later"

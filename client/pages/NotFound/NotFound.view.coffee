@@ -9,4 +9,4 @@ define (require) ->
         i {className: "attention icon"}
         div {className: "content"},
           div {className: "header"}, "Page not found"
-          p "The page you tried to reach does not exist. Sorry about that."
+          p {}, "The page you tried to reach does not exist. Sorry about that."

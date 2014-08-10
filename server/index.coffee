@@ -10,9 +10,9 @@ idxFile = join __dirname, '../public/index.html'
 # page.js - client-side routing
 
 app.get '/serverConfig.js', (req, res) ->
-  src = 'window._serverConfig = {'
-  src += 'name: '#{config.name}''
-  src += '};'
+  src = "window._serverConfig = {"
+  src += "name: '#{config.name}'"
+  src += "};"
 
   res.set 'Content-Type', 'application/javascript'
   res.status 200
@@ -26,8 +26,6 @@ app.get '/test.json', (req, res) ->
   res.sendFile testFile
 
 ####
-
-
 
 
 app.get '/*', (req, res) ->
