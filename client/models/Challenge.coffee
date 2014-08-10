@@ -5,4 +5,4 @@ define (require) ->
   Dermis.model
     idAttribute: '_id'
     name: 'Challenge'
-    url: "/test.json"
+    url: '/test.json'
