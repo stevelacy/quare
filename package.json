@@ -10,7 +10,7 @@
   "dev-dependencies": {
     "autoprefixer-stylus": "^0.2.0",
     "coffee-script": "^1.7.1",
-    "gulp": "^3.8.7",
+    "gulp": "*",
     "gulp-autowatch": "0.0.1",
     "gulp-cached": "^1.0.1",
     "gulp-coffee": "^2.1.1",
