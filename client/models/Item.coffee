@@ -4,4 +4,5 @@ module.exports = ->
 
   Dermis.model
     idAttribute: "_id"
-    name: "User"
+    name: "Item"
+    url: "/test.json"

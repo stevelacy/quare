@@ -40,6 +40,7 @@ paths =
   coffee: "./client/**/*.coffee"
   coffeeSrc: "./client/start.coffee"
   stylus: "./client/**/*.styl"
+  stylusSrc: "./client/css/app.styl"
   jade: "./client/**/*.jade"
 
 # im going to break this out into a module
@@ -58,7 +59,7 @@ gulp.task "coffee", ->
 
 # styles
 gulp.task "stylus", ->
-  gulp.src paths.stylus
+  gulp.src paths.stylusSrc
     .pipe stylus
       use:[
         nib(),

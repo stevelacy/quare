@@ -5,6 +5,6 @@ module.exports = ->
 
   Dermis.view
     render: ->
-      header {className: "bar bar-nav main-navbar"},
+      header {className: "header"},
         a {href: "/profile"}, "Profile"
         h1 {className: "title"}, "Nav Bar"

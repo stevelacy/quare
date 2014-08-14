@@ -1,10 +1,10 @@
 @require 'nib'
 @require './mixins/fonts'
-@require './mixins/colors'
 
-// force hardware accelerated css
+
+@import './imports/reset'
+@import './imports/colors'
 html, body
-  hardware()
   better-font()
   helvetica()
   background-color grey-light
@@ -12,32 +12,5 @@ html, body
   font-size 1em
   line-height 1.4
 
-@import './imports/reset'
 @import './imports/buttons'
-
-
-
-
-.bar
-  border none
-  background-color bgColor
-  height 64px
-  .icon
-    padding-top 20px
-    padding-bottom 20px
-  .btn-link, .title
-    line-height 64px
-  .title
-    color fgColor
-    font-size 28px
-  .action-link
-    color teal
-    display block
-    height 100%
-.bar-nav-dark
-  background-color grey
-
-selection
-  text-shaodw none
-  background-color #b3d4fc
-  color #fff
+@import './imports/header'
