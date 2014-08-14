@@ -1,4 +1,3 @@
-define (require) ->
-  return (ctx, next) ->
-    console.log 'Routing called', ctx
-    next()
+module.exports = (ctx, next) ->
+  console.log 'Routing called', ctx
+  next()

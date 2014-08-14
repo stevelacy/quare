@@ -1,44 +1,44 @@
-define (require) ->
+{app, middleware} = require "./vendor/dermis"
 
-  {app, middleware} = require 'vendor/dermis'
+NotFoundView = require "./pages/NotFound/NotFound.view"
+ProfileView = require "./pages/Profile/Profile.view"
+NavbarView = require "./pages/Navbar/Navbar.view"
+IndexView = require "./pages/Index/Index.view"
+LoginView = require "./pages/Login/Login.view"
 
-  APPNAME = _serverConfig.name
+APPNAME = _serverConfig.name
 
-  app.use middleware.clearFB
-  app.use middleware.log
+#app.use middleware.clearFB
+#app.use middleware.log
 
-  app.use
-    view: "pages/Navbar/Navbar.view"
-    el: "navbar"
+###
+app.use
+  view: NavbarView
+  el: "navbar"
+###
 
-  app.route "/login",
-    title: "#{APPNAME} - Login"
-    view: "pages/Login/Login.view"
-    el: "content"
-    continue: false
+app.route "/login",
+  title: "#{APPNAME} - Login"
+  view: LoginView.view
+  el: "content"
+  continue: false
 
-  app.route "/profile",
-    title: "#{APPNAME} - Profile"
-    view: "pages/Profile/Profile.view"
-    el: "content"
-    continue: false
+app.route "/profile",
+  title: "#{APPNAME} - Profile"
+  view: ProfileView.view
+  el: "content"
+  continue: false
 
-  app.route '/challenges',
-    title: "#{APPNAME} - Challenges"
-    view: 'pages/Challenges/Index.view'
-    el: 'content'
-    continue: false
-
-  app.route "/",
-    title: "#{APPNAME}"
-    view: "pages/Index/Index.view"
-    el: "content"
-    continue: false
-
-  app.use
-    title: "#{APPNAME} - Not found"
-    view: "pages/NotFound/NotFound.view"
-    el: "content"
-    continue: false
-
-  return app
+app.route "/",
+  title: "#{APPNAME}"
+  view: IndexView.view
+  el: "content"
+  continue: false
+###
+app.use
+  title: "#{APPNAME} - Not found"
+  view: NotFoundView.view
+  el: "content"
+  continue: false
+###
+module.exports = app

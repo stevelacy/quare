@@ -1,5 +1,4 @@
-define (require) ->
 
-  return (cb) ->
-    auth = {}
-    cb auth
+return (cb) ->
+  auth = {}
+  cb auth

@@ -13,11 +13,16 @@ concat = require "gulp-concat"
 plumber = require "gulp-plumber"
 reload = require "gulp-livereload"
 htmlmin = require "gulp-minify-html"
+browserify = require "gulp-browserify-next"
+coffeeify = require "gulp-coffeeify"
 
 gif = require "gulp-if"
+
+#coffeeify = require "coffeeify"
 nib = require "nib"
 autoprefixer = require "autoprefixer-stylus"
 autowatch = require "gulp-autowatch"
+sourcemaps = require "gulp-sourcemaps"
 
 cssSupport = [
   "last 5 versions"
@@ -35,6 +40,7 @@ paths =
   img: "./client/img/**/*"
   fonts: "./client/fonts/**/*"
   coffee: "./client/**/*.coffee"
+  coffeeSrc: "./client/start.coffee"
   stylus: "./client/**/*.styl"
   jade: "./client/**/*.jade"
 
@@ -45,11 +51,16 @@ gulp.task "server", (cb) ->
 
 # javascript
 gulp.task "coffee", ->
-  gulp.src paths.coffee
-    .pipe cache "coffee"
+  gulp.src paths.coffeeSrc
     .pipe plumber()
-    .pipe coffee()
+    .pipe sourcemaps.init()
+    #.pipe coffee()
     .pipe gif gutil.env.production, uglify()
+    #.pipe browserify "app.js",
+    #  extensions: ".coffee"
+    #  plugins: ["coffeeify"]
+    .pipe coffeeify()
+    .pipe sourcemaps.write()
     .pipe gulp.dest "./public"
     .pipe reload()
 
