@@ -6,15 +6,17 @@ NavbarView = require "./pages/Navbar/Navbar.view"
 IndexView = require "./pages/Index/Index.view"
 LoginView = require "./pages/Login/Login.view"
 
+
 APPNAME = _serverConfig.name
 
 #app.use middleware.clearFB
 #app.use middleware.log
 
+console.log middleware.log
 
 app.use
   view: NavbarView
-  el: "navbar"
+  el: "header"
 
 
 app.route "/login",
@@ -30,7 +32,7 @@ app.route "/profile",
   continue: false
 
 app.route "/",
-  title: "#{APPNAME}"
+  title: "#{APPNAME} - Home"
   view: IndexView
   el: "content"
   continue: false

@@ -1,6 +1,6 @@
-define (require) ->
+module.exports = ->
 
-  Dermis = require 'vendor/dermis'
+  Dermis = require '../vendor/dermis'
 
   Dermis.model
     idAttribute: '_id'
