@@ -1,7 +1,6 @@
 app = {}
 
 renderView = (opt={}, cb) ->
-  console.log opt
   if typeof opt.view is 'function'
     opt.view = opt.view opt.args
     return renderView opt, cb

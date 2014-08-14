@@ -41,12 +41,10 @@ me = require "../../auth"
 dermis =
 
   app: app
-  ###
   middleware:
     auth: require "./middleware/auth"
     clearFB: require "./middleware/clearFB"
     log: require "./middleware/log"
-  ###
   mixins:
     Listener: ListenerMixin
 

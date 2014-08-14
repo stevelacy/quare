@@ -10,5 +10,3 @@ Dermis.view
       div {className: "content"},
         div {className: "header"}, "Page not found"
         p {}, "The page you tried to reach does not exist. Sorry about that."
-
-module.exports = Dermis

@@ -1,6 +1,6 @@
 {app, middleware} = require "./vendor/dermis"
 
-NotFoundView = require "./pages/NotFound/NotFound.view"
+#NotFoundView = require "./pages/NotFound/NotFound.view"
 ProfileView = require "./pages/Profile/Profile.view"
 NavbarView = require "./pages/Navbar/Navbar.view"
 IndexView = require "./pages/Index/Index.view"
@@ -11,33 +11,33 @@ APPNAME = _serverConfig.name
 #app.use middleware.clearFB
 #app.use middleware.log
 
-###
+
 app.use
   view: NavbarView
   el: "navbar"
-###
+
 
 app.route "/login",
   title: "#{APPNAME} - Login"
-  view: LoginView.view
+  view: LoginView
   el: "content"
   continue: false
 
 app.route "/profile",
   title: "#{APPNAME} - Profile"
-  view: ProfileView.view
+  view: ProfileView
   el: "content"
   continue: false
 
 app.route "/",
   title: "#{APPNAME}"
-  view: IndexView.view
+  view: IndexView
   el: "content"
   continue: false
 ###
 app.use
   title: "#{APPNAME} - Not found"
-  view: NotFoundView.view
+  view: NotFoundView
   el: "content"
   continue: false
 ###

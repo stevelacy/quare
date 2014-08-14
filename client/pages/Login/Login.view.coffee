@@ -1,31 +1,32 @@
-{div, h1, button, br, span, img} = React.DOM
-Dermis = require "../../vendor/dermis"
+module.exports = ->
+  {div, h1, button, br, span, img} = React.DOM
+  Dermis = require "../../vendor/dermis"
 
-Dermis.view
-  login: ->
-    console.log firebase
-    auth = new FirebaseSimpleLogin firebase, (error, user) ->
+  Dermis.view
+    login: ->
+      console.log firebase
+      auth = new FirebaseSimpleLogin firebase, (error, user) ->
 
-      # just doing this manually - we"ll need another screen
-      # to select auth type then trigger this with creds
+        # just doing this manually - we"ll need another screen
+        # to select auth type then trigger this with creds
 
-      auth.login "password", {email: "aaron@wearefractal.com", password: "test"}
+        auth.login "password", {email: "aaron@wearefractal.com", password: "test"}
 
-      # redirect to homepage
-      page "/"
+        # redirect to homepage
+        page "/"
 
-  render: ->
+    render: ->
 
-    div {className: "login-page content-padded"},
+      div {className: "login-page content-padded"},
 
-      div {},
-        img {src: "/img/ripple.png"}
+        div {},
+          img {src: "/img/ripple.png"}
 
-      div {className: "greytext"},
-        div {}, "A daily challenge to"
-        div {}, "change the world, together."
+        div {className: "greytext"},
+          div {}, "A daily challenge to"
+          div {}, "change the world, together."
 
-      br {}
-      button {className: "button", onClick: @login}, "LOGIN"
+        br {}
+        button {className: "button", onClick: @login}, "LOGIN"
 
-module.exports = Dermis
+
