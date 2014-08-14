@@ -1,6 +1,6 @@
 {app, middleware} = require "./vendor/dermis"
 
-#NotFoundView = require "./pages/NotFound/NotFound.view"
+NotFoundView = require "./pages/NotFound/NotFound.view"
 ProfileView = require "./pages/Profile/Profile.view"
 NavbarView = require "./pages/Navbar/Navbar.view"
 IndexView = require "./pages/Index/Index.view"
@@ -34,11 +34,11 @@ app.route "/",
   view: IndexView
   el: "content"
   continue: false
-###
+
 app.use
   title: "#{APPNAME} - Not found"
   view: NotFoundView
   el: "content"
   continue: false
-###
+
 module.exports = app

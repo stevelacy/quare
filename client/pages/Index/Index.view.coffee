@@ -3,13 +3,10 @@ module.exports = ->
   Dermis = require "../../vendor/dermis"
 
   Dermis.view
-    goNext: ->
-      page "/profile"
-
     render: ->
       div {className: "main"},
 
-        div {className: "button", onClick: @goNext}, "Click me"
+        a {className: "button", href: "/profile"}, "Click me"
           img {src: "/img/ripple.png"}
         div {className: "greytext"},
           div {}, "A daily challenge to"

@@ -6,5 +6,5 @@ module.exports = ->
   Dermis.view
     render: ->
       header {className: "bar bar-nav main-navbar"},
-        a {href: "#", className: "icon pu-icon icon-back pull-left", onClick: @gotoChallenges}
+        a {href: "/profile"}, "Profile"
         h1 {className: "title"}, "Nav Bar"
