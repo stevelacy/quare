@@ -16,8 +16,8 @@ htmlmin = require "gulp-minify-html"
 coffeeify = require "gulp-coffeeify"
 
 gif = require "gulp-if"
+sourcemaps = require "gulp-sourcemaps"
 
-#coffeeify = require "coffeeify"
 nib = require "nib"
 autoprefixer = require "autoprefixer-stylus"
 autowatch = require "gulp-autowatch"
@@ -60,11 +60,13 @@ gulp.task "coffee", ->
 # styles
 gulp.task "stylus", ->
   gulp.src paths.stylusSrc
+    .pipe sourcemaps.init()
     .pipe stylus
       use:[
-        nib(),
+        nib()
         autoprefixer cssSupport, cascade: true
       ]
+    .pipe sourcemaps.write()
     .pipe concat "app.css"
     .pipe gif gutil.env.production, csso()
     .pipe gulp.dest "./public"
