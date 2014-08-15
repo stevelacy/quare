@@ -1,8 +1,11 @@
 module.exports = ->
   {div, h2, h3, img, p, span, a} = React.DOM
   Dermis = require "../../vendor/dermis"
+  ProfileModel = require "../../models/User"
 
   Dermis.view
+    model: ProfileModel
+
     render: ->
 
       div {className: "profile-page"},
@@ -15,4 +18,4 @@ module.exports = ->
               h3 {}, "Carson Linforth Bowley"
               p {className: "location"}, "San Francisco"
               p {className: "impact-score"},
-                span {}, "280"
+                span {}, "Items: #{@model}"
