@@ -1,8 +1,9 @@
-module.exports = ->
-  React = require "react"
-  Fission = require "../../vendor/fission"
-  {img} = React.DOM
+React = require "react"
+Fission = require "../../vendor/fission"
 
+{img} = React.DOM
+
+module.exports = ->
   Fission.view
     getDefaultProps: -> {size: 200}
     render: ->

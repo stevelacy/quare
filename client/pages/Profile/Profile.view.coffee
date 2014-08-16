@@ -1,17 +1,17 @@
-module.exports = ->
-  React = require "react"
-  Fission = require "../../vendor/fission"
-  ProfileModel = require "../../models/User"
-  {div, h2, h3, img, p, span, a} = React.DOM
+React = require "react"
+Fission = require "../../vendor/fission"
+User = require "../../models/User"
 
+{div, h2, h3, img, p, span, a} = React.DOM
+
+module.exports = ->
 
   Fission.modelView
-    model: ProfileModel
+    model: new User()
 
     render: ->
 
       div {className: "profile-page"},
-
         div {className: "block user-details"},
           div {className: "user-photo"},
             img {src: "/img/demo/user-1.jpg"}

@@ -1,9 +1,9 @@
+React = require "react"
+Fission = require "../../vendor/fission"
+
+{header, h1, img, a, div, span, p, button} = React.DOM
+
 module.exports = ->
-  React = require "react"
-  {header, h1, img, a, div, span, p, button} = React.DOM
-
-  Fission = require "../../vendor/fission"
-
   Fission.view
     render: ->
       header {className: "header"},
