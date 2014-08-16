@@ -43,8 +43,6 @@ paths =
   stylusSrc: "./client/css/app.styl"
   jade: "./client/**/*.jade"
 
-# im going to break this out into a module
-# so this will become about two lines
 gulp.task "server", (cb) ->
   require "./start"
 
