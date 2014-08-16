@@ -7,7 +7,7 @@ User = require "../../models/User"
 module.exports = ->
 
   Fission.modelView
-    model: new User()
+    model: User
 
     render: ->
 
@@ -20,4 +20,4 @@ module.exports = ->
               h3 {}, "Carson Linforth Bowley"
               p {className: "location"}, "San Francisco"
               p {className: "impact-score"},
-                span {}, "Items: #{@model}"
+                span {}, "model is: #{console.log  @model}"

@@ -28,6 +28,10 @@ app.get "/test.json", (req, res) ->
 app.get "/v1/users", (req, res) ->
   testFile = join __dirname, "../client/users.json"
   res.sendFile testFile
+
+app.get "/v1/user", (req, res) ->
+  testFile = join __dirname, "../client/user.json"
+  res.sendFile testFile
 ####
 
 

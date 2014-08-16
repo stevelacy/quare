@@ -1,4 +1,6 @@
 Backbone = require 'backbone'
+$ = require 'jquery'
+Backbone.$ = $
 
 module.exports = (model) ->
   model.urlRoot = model.url

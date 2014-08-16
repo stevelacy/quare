@@ -12,7 +12,6 @@ routerNAME = _serverConfig.name
 #router.use middleware.clearFB
 #router.use middleware.log
 
-console.log middleware.log
 
 router.use
   view: NavbarView
@@ -25,7 +24,7 @@ router.route "/login",
   el: "content"
   continue: false
 
-router.route "/profile",
+router.route "/profile/:id",
   title: "#{routerNAME} - Profile"
   view: ProfileView
   el: "content"

@@ -15,7 +15,8 @@ module.exports = (config) ->
         @model.set(@model.idAttribute, @props.params.id)
         @listenTo @model, 'change', =>
           @forceUpdate()
-        @model.fetch()
+        @model.fetch (arg, data) ->
+          console.log "fetching", arg, data
 
   # validate the options given
   unless config.model?

@@ -6,7 +6,7 @@ compress = require 'compression'
 config = require '../config'
 log = require '../lib/log'
 
-toobusy.maxLag 10
+toobusy.maxLag 400
 
 app = express()
 app.disable 'x-powered-by'
