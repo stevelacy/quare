@@ -1,8 +1,10 @@
 module.exports = ->
-  {div, h1, button, br, span, img, a} = React.DOM
-  Dermis = require "../../vendor/dermis"
+  React = require "react"
+  Fission = require "../../vendor/fission"
 
-  Dermis.view
+  {div, h1, button, br, span, img, a} = React.DOM
+
+  Fission.view
     render: ->
       div {className: "main"},
 

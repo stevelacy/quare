@@ -1,9 +1,10 @@
 module.exports = ->
+  React = require "react"
   {header, h1, img, a, div, span, p, button} = React.DOM
 
-  Dermis = require "../../vendor/dermis"
+  Fission = require "../../vendor/fission"
 
-  Dermis.view
+  Fission.view
     render: ->
       header {className: "header"},
         a {href: "/profile"}, "Profile"

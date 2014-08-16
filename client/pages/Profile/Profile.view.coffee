@@ -1,9 +1,11 @@
 module.exports = ->
-  {div, h2, h3, img, p, span, a} = React.DOM
-  Dermis = require "../../vendor/dermis"
+  React = require "react"
+  Fission = require "../../vendor/fission"
   ProfileModel = require "../../models/User"
+  {div, h2, h3, img, p, span, a} = React.DOM
 
-  Dermis.view
+
+  Fission.modelView
     model: ProfileModel
 
     render: ->

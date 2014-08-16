@@ -1,8 +1,9 @@
 module.exports = ->
+  React = require "react"
+  Fission = require "../../vendor/fission"
   {div, h1, button, br, span, img} = React.DOM
-  Dermis = require "../../vendor/dermis"
 
-  Dermis.view
+  Fission.view
     login: ->
       console.log firebase
       auth = new FirebaseSimpleLogin firebase, (error, user) ->

@@ -1,4 +1,4 @@
-{app, middleware} = require "./vendor/dermis"
+{router, middleware} = require "./vendor/fission"
 
 NotFoundView = require "./pages/NotFound/NotFound.view"
 ProfileView = require "./pages/Profile/Profile.view"
@@ -7,40 +7,40 @@ IndexView = require "./pages/Index/Index.view"
 LoginView = require "./pages/Login/Login.view"
 
 
-APPNAME = _serverConfig.name
+routerNAME = _serverConfig.name
 
-#app.use middleware.clearFB
-#app.use middleware.log
+#router.use middleware.clearFB
+#router.use middleware.log
 
 console.log middleware.log
 
-app.use
+router.use
   view: NavbarView
   el: "header"
 
 
-app.route "/login",
-  title: "#{APPNAME} - Login"
+router.route "/login",
+  title: "#{routerNAME} - Login"
   view: LoginView
   el: "content"
   continue: false
 
-app.route "/profile",
-  title: "#{APPNAME} - Profile"
+router.route "/profile",
+  title: "#{routerNAME} - Profile"
   view: ProfileView
   el: "content"
   continue: false
 
-app.route "/",
-  title: "#{APPNAME} - Home"
+router.route "/",
+  title: "#{routerNAME} - Home"
   view: IndexView
   el: "content"
   continue: false
 
-app.use
-  title: "#{APPNAME} - Not found"
+router.use
+  title: "#{routerNAME} - Not found"
   view: NotFoundView
   el: "content"
   continue: false
 
-module.exports = app
+module.exports = router

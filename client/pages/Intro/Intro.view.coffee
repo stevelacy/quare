@@ -1,8 +1,9 @@
 module.exports = ->
+  React = require "react"
+  Fission = require "../../vendor/fission"
   {div, h1, h2, button, br, span, img, i, p, strong} = React.DOM
-  Dermis = require "../../vendor/dermis"
 
-  Dermis.view
+  Fission.view
     goChallenges: ->
       page "/challenges"
 
