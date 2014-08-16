@@ -49,23 +49,25 @@ gulp.task "server", (cb) ->
 # javascript
 gulp.task "coffee", ->
   gulp.src paths.coffeeSrc
+    .pipe sourcemaps.init()
     .pipe plumber()
     .pipe gif gutil.env.production, uglify()
     .pipe coffeeify()
+    .pipe sourcemaps.write()
     .pipe gulp.dest "./public"
     .pipe reload()
 
 # styles
 gulp.task "stylus", ->
-  gulp.src paths.stylusSrc
+  gulp.src paths.stylus
     .pipe sourcemaps.init()
     .pipe stylus
       use:[
         nib()
         autoprefixer cssSupport, cascade: true
       ]
-    .pipe sourcemaps.write()
     .pipe concat "app.css"
+    .pipe sourcemaps.write()
     .pipe gif gutil.env.production, csso()
     .pipe gulp.dest "./public"
     .pipe reload()

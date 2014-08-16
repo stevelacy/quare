@@ -1,12 +1,14 @@
-{img} = React.DOM
-Dermis = require '../vendor/dermis'
+module.exports = ->
+  React = require "react"
+  Fission = require "../../vendor/fission"
+  {img} = React.DOM
 
-Dermis.view
-  getDefaultProps: -> {size: 200}
-  render: ->
-    retinaSize = @props.size * 2
-    src  = "http://graph.facebook.com/#{@props.user.get('prettyName')}"
-    src += "/picture?width=#{retinaSize}"
-    src += "&height=#{retinaSize}"
+  Fission.view
+    getDefaultProps: -> {size: 200}
+    render: ->
+      retinaSize = @props.size * 2
+      src  = "http://graph.facebook.com/#{@props.user.get('prettyName')}"
+      src += "/picture?width=#{retinaSize}"
+      src += "&height=#{retinaSize}"
 
-    @transferPropsTo(img {className: 'profile-pic', src: src})
+      @transferPropsTo(img {className: 'profile-pic', src: src})
