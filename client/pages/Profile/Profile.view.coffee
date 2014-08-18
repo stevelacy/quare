@@ -11,13 +11,10 @@ module.exports = ->
 
     render: ->
 
-      div {className: "profile-page"},
-        div {className: "block user-details"},
-          div {className: "user-photo"},
-            img {src: "/img/demo/user-1.jpg"}
-          div {className: "user-info"},
-            div {className: "padder"},
-              h3 {}, "Carson Linforth Bowley"
-              p {className: "location"}, "San Francisco"
-              p {className: "impact-score"},
-                span {}, "model is: #{@model}#{console.log  @model}"
+      div {className: "profile"},
+        div {className: "user"},
+          div {className: "image"},
+            img {src: "#{@model.get('image')}"},
+          div {className: "info"},
+            h2 {}, "#{@model.get('name')}"
+            h3 {}, "@#{@model.get('handle')}"
