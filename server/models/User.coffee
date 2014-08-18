@@ -3,7 +3,6 @@
 User = new Schema
   auth:
     type: Number
-    required: true
     default: 0
 
   name:
@@ -15,7 +14,20 @@ User = new Schema
 
   image:
     type: String
-    default: "/images/user.png"
+    default: "/img/user.png"
+
+  firstLogin:
+    type: Boolean
+    default: true
+
+  provider:
+    type: String
+
+  twid:
+    type: Number
+
+  token:
+    type: String
 
 User.set "autoindex", false
 module.exports = User

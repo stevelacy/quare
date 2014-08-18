@@ -1,2 +1,3 @@
-requireDir = require "require-dir"
-module.exports = requireDir()
+mongoose = require "mongoose"
+
+module.exports.User = mongoose.model "User", require "./User"
