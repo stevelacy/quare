@@ -15,21 +15,6 @@ app.all "*", (req, res, next) ->
   return res.send(200)  if req.method is "OPTIONS"
   next()
 
-
-####
-# TESTING REMOVE
-
-app.get "/test.json", (req, res) ->
-  testFile = join __dirname, "../../../client/test.json"
-  res.sendFile testFile
-
+# User
 app.get "/v1/users/:id", user
 app.get "/v1/users", users
-
-#    testFile = join(__dirname, "../../../client/users.json")
-#    res.status(200).sendFile testFile
-
-app.get "/v1/user", (req, res) ->
-  testFile = join __dirname, "../../../client/user.json"
-  res.sendFile testFile
-####
