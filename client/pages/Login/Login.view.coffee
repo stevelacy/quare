@@ -1,35 +1,19 @@
+page = require "page"
 React = require "react"
 Fission = require "../../vendor/fission"
 
-{div, h1, button, br, span, img} = React.DOM
+{div, h1, button, a, img} = React.DOM
 
 module.exports = ->
 
   Fission.view
-    login: ->
-      console.log firebase
-      auth = new FirebaseSimpleLogin firebase, (error, user) ->
-
-        # just doing this manually - we"ll need another screen
-        # to select auth type then trigger this with creds
-
-        auth.login "password", {email: "aaron@wearefractal.com", password: "test"}
-
-        # redirect to homepage
-        page "/"
-
+    twitter: ->
+      window.location = "/auth/twitter"
     render: ->
 
-      div {className: "login-page content-padded"},
+      div {className: "login-page"},
 
         div {},
-          img {src: "/img/ripple.png"}
+          img {src: "/img/logo.png"}
 
-        div {className: "greytext"},
-          div {}, "A daily challenge to"
-          div {}, "change the world, together."
-
-        br {}
-        button {className: "button", onClick: @login}, "LOGIN"
-
-
+        button {className: "button blue", onClick: @twitter}, "TWITTER"
