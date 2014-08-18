@@ -36,4 +36,15 @@ app.use (req, res, next) ->
       .send "Server under heavy load"
   next()
 
+
+app.all "*", (req, res, next) ->
+  res.header "Access-Control-Allow-Origin", req.headers.origin
+  res.header "Access-Control-Allow-Credentials", true
+  res.header "Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS"
+  res.header "Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Authorization, Content-Length"
+  return res.send(200)  if req.method is "OPTIONS"
+  next()
+
+
+
 module.exports = app

@@ -10,7 +10,7 @@ module.exports =
     name: "quare"
   twitter:
     id: keys.twitter.id
-    secret: twitter.secret
+    secret: keys.twitter.secret
     callback: "/auth/twitter/callback"
   session:
     name: "saywat.sid"
