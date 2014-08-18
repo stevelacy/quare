@@ -7,7 +7,7 @@ IndexView = require "./pages/Index/Index.view"
 LoginView = require "./pages/Login/Login.view"
 
 
-routerNAME = _serverConfig.name
+APPNAME = _serverConfig.name
 
 #router.use middleware.clearFB
 #router.use middleware.log
@@ -19,25 +19,25 @@ router.use
 
 
 router.route "/login",
-  title: "#{routerNAME} - Login"
+  title: "#{APPNAME} - Login"
   view: LoginView
   el: "content"
   continue: false
 
 router.route "/profile/:id",
-  title: "#{routerNAME} - Profile"
+  title: "#{APPNAME} - Profile"
   view: ProfileView
   el: "content"
   continue: false
 
 router.route "/",
-  title: "#{routerNAME} - Home"
+  title: "#{APPNAME} - Home"
   view: IndexView
   el: "content"
   continue: false
 
 router.use
-  title: "#{routerNAME} - Not found"
+  title: "#{APPNAME} - Not found"
   view: NotFoundView
   el: "content"
   continue: false

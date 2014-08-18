@@ -20,4 +20,4 @@ module.exports = ->
               h3 {}, "Carson Linforth Bowley"
               p {className: "location"}, "San Francisco"
               p {className: "impact-score"},
-                span {}, "model is: #{console.log  @model}"
+                span {}, "model is: #{@model}#{console.log  @model}"
