@@ -6,6 +6,11 @@ Fission = require "../../vendor/fission"
 module.exports = ->
   Fission.view
     render: ->
-      header {className: "header"},
+      div {className: "navbar"},
         a {href: "/profile"}, "Profile"
         h1 {className: "title"}, "Nav Bar"
+        div {className: "right"},
+          if window._user?
+            div {className: "user"},
+              div {className: "image"},
+                img {src: "#{window._user.image}"}
