@@ -10,8 +10,7 @@ module.exports = ->
       div {className: "main"},
 
         a {className: "button", href: "/profile"}, "Click me"
-          img {src: "/img/ripple.png"}
-        div {className: "greytext"},
-          div {}, "A daily challenge to"
-          div {}, "change the world, together."
+        br {},
+        img {src: "/img/user.png"}
 
+        div {}, "This is the index page..."
