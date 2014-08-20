@@ -1,1 +1,25 @@
+@require 'mixins/reset'
+@require 'mixins/fonts'
+*
+  reset()
 
+*, *:before, *:after
+  reset()
+
+html, body
+  height 100vh
+  width 100%
+body
+  font-roboto()
+
+
+.main
+  height 100vh
+  min-width 10vw
+
+
+// Global styles
+@import 'imports/colors'
+@import 'imports/classes'
+@import 'imports/buttons'
+@import 'imports/extras'
