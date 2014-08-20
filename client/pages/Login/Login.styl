@@ -1,1 +1,21 @@
+@require '../../css/mixins/background'
+@require '../../css/mixins/aligns'
+@require '../../css/mixins/fonts'
+@import '../../css/imports/colors'
 
+.main
+  &.login
+    full-background('/img/grass.jpg')
+    .page
+      center()
+      trans-background(150, 150, 150, .4)
+      margin-top 10vh
+      padding 10vh
+      width 80%
+      margin-left 10%
+      .logo
+        width 50%
+        margin-left 25%
+        color white
+        font-trench()
+        font-size 75px
