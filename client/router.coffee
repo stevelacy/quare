@@ -9,8 +9,6 @@ NavbarView = require "./components/Navbar/View"
 
 APPNAME = _serverConfig.name
 
-#router.use middleware.clearFB
-#router.use middleware.log
 
 router.route "/login",
   title: "#{APPNAME} - Login"
