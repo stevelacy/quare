@@ -2,21 +2,15 @@
 
 NotFoundView = require "./pages/NotFound/NotFound.view"
 ProfileView = require "./pages/Profile/Profile.view"
-NavbarView = require "./pages/Navbar/Navbar.view"
 IndexView = require "./pages/Index/Index.view"
 LoginView = require "./pages/Login/Login.view"
 
+NavbarView = require "./components/Navbar/View"
 
 APPNAME = _serverConfig.name
 
 #router.use middleware.clearFB
 #router.use middleware.log
-
-
-router.use
-  view: NavbarView
-  el: "header"
-
 
 router.route "/login",
   title: "#{APPNAME} - Login"
