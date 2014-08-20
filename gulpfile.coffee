@@ -40,7 +40,6 @@ paths =
   coffee: "./client/**/*.coffee"
   coffeeSrc: "./client/start.coffee"
   stylus: "./client/**/*.styl"
-  stylusSrc: "./client/css/app.styl"
   jade: "./client/**/*.jade"
 
 gulp.task "server", (cb) ->
