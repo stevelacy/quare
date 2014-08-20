@@ -13,13 +13,20 @@ body
   font-roboto()
 
 
+// Global styles
+@import 'imports/colors'
+
+a
+  text-decoration none
+  color blue
+  &:hover
+    text-decoration underline
+
 .main
   height 100vh
   min-width 10vw
 
 
-// Global styles
-@import 'imports/colors'
 @import 'imports/classes'
 @import 'imports/buttons'
 @import 'imports/extras'
