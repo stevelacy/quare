@@ -1,32 +1,21 @@
-define (require) ->
+page = require "page"
+React = require "react"
+Fission = require "../../vendor/fission"
+NavbarView = require "../../components/Navbar/View"
 
-  {div, h1, button, br, span, img} = React.DOM
-  Dermis = require 'vendor/dermis'
-  firebase = require 'firebase'
+{div, h1, button, a, img, br} = React.DOM
 
-  Dermis.view
-    login: ->
-      console.log firebase
-      auth = new FirebaseSimpleLogin firebase, (error, user) ->
+module.exports = ->
 
-        # just doing this manually - we"ll need another screen
-        # to select auth type then trigger this with creds
-
-        auth.login 'password', {email: "aaron@wearefractal.com", password: "test"}
-
-        # redirect to homepage
-        page '/'
-
+  Fission.view
+    twitter: ->
+      window.location = "/auth/twitter"
     render: ->
+      div {className: "main login"},
+        NavbarView
+          color: "light"
+        div {className: "page"},
 
-      div {className: "login-page content-padded"},
-
-        div {},
-          img {src: "/img/ripple.png"}
-
-        div {className: "greytext"},
-          div {}, "A daily challenge to"
-          div {}, "change the world, together."
-
-        br {}
-        button {className: "button", onClick: @login}, "LOGIN"
+          div {className: "logo white"}, "Login"
+          div {className: "spacer-50"}
+          button {className: "button blue large wide center", onClick: @twitter}, "TWITTER"

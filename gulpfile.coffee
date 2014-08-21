@@ -1,6 +1,10 @@
 path = require "path"
 gulp = require "gulp"
-gutil = require "gulp-util"
+
+source     = require 'vinyl-source-stream'
+buffer     = require 'vinyl-buffer'
+coffeeify  = require 'coffeeify'
+browserify   = require 'browserify'
 
 jade = require "gulp-jade"
 csso = require "gulp-csso"
@@ -14,20 +18,16 @@ plumber = require "gulp-plumber"
 reload = require "gulp-livereload"
 htmlmin = require "gulp-minify-html"
 
+gutil = require "gulp-util"
 gif = require "gulp-if"
+sourcemaps = require "gulp-sourcemaps"
+
+
+
 nib = require "nib"
 autoprefixer = require "autoprefixer-stylus"
 autowatch = require "gulp-autowatch"
 
-cssSupport = [
-  "last 5 versions"
-  "> 1%"
-  "ie 8"
-  "ie 7"
-  "Android"
-  "Android 4"
-  "BlackBerry 10"
-]
 
 # paths
 paths =
@@ -35,33 +35,41 @@ paths =
   img: "./client/img/**/*"
   fonts: "./client/fonts/**/*"
   coffee: "./client/**/*.coffee"
+  coffeeSrc: "./client/start.coffee"
   stylus: "./client/**/*.styl"
   jade: "./client/**/*.jade"
 
-# im going to break this out into a module
-# so this will become about two lines
 gulp.task "server", (cb) ->
   require "./start"
 
 # javascript
 gulp.task "coffee", ->
-  gulp.src paths.coffee
-    .pipe cache "coffee"
-    .pipe plumber()
-    .pipe coffee()
-    .pipe gif gutil.env.production, uglify()
-    .pipe gulp.dest "./public"
-    .pipe reload()
+  bCache = {}
+  b = browserify paths.coffeeSrc,
+    debug: true
+    insertGlobals: true
+    cache: bCache
+    extensions: ['.coffee']
+  b.transform coffeeify
+  b.bundle()
+  .pipe source "start.js"
+  .pipe buffer()
+  .pipe plumber()
+  .pipe gif gutil.env.production, uglify()
+  .pipe gulp.dest "./public"
+  .pipe reload()
 
 # styles
 gulp.task "stylus", ->
   gulp.src paths.stylus
+    .pipe sourcemaps.init()
     .pipe stylus
       use:[
-        nib(),
-        autoprefixer cssSupport, cascade: true
+        nib()
+        autoprefixer cascade: true
       ]
     .pipe concat "app.css"
+    .pipe sourcemaps.write()
     .pipe gif gutil.env.production, csso()
     .pipe gulp.dest "./public"
     .pipe reload()

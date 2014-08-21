@@ -1,35 +1,18 @@
-{join} = require 'path'
+{join} = require "path"
 
-app = require './express'
-log = require '../lib/log'
-config = require '../config'
-httpServer = require './httpServer'
+app = require "./http/express"
+log = require "../lib/log"
+config = require "../config"
+httpServer = require "./http/httpServer"
 
-idxFile = join __dirname, '../public/index.html'
+# authentication
+auth = require "./http/passport"
+fbauth = require "./http/passport/twitter"
 
-# page.js - client-side routing
+# routes
+api = require "./http/api"
+spa = require "./http/spa"
 
-app.get '/serverConfig.js', (req, res) ->
-  src = "window._serverConfig = {"
-  src += "name: '#{config.name}'"
-  src += "};"
-
-  res.set 'Content-Type', 'application/javascript'
-  res.status 200
-    .send src
-
-####
-# TESTING REMOVE
-
-app.get '/test.json', (req, res) ->
-  testFile = join __dirname, '../client/test.json'
-  res.sendFile testFile
-
-####
-
-
-app.get '/*', (req, res) ->
-  res.sendFile idxFile
 
 httpServer.listen config.port, ->
   log.info "info", "Server running on #{config.port}"

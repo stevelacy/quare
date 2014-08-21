@@ -1,44 +1,37 @@
-define (require) ->
+{router, middleware} = require "./vendor/fission"
 
-  {app, middleware} = require 'vendor/dermis'
+NotFoundView = require "./pages/NotFound/NotFound.view"
+ProfileView = require "./pages/Profile/Profile.view"
+IndexView = require "./pages/Index/Index.view"
+LoginView = require "./pages/Login/Login.view"
 
-  APPNAME = _serverConfig.name
+NavbarView = require "./components/Navbar/View"
 
-  app.use middleware.clearFB
-  app.use middleware.log
+APPNAME = _serverConfig.name
 
-  app.use
-    view: "pages/Navbar/Navbar.view"
-    el: "navbar"
 
-  app.route "/login",
-    title: "#{APPNAME} - Login"
-    view: "pages/Login/Login.view"
-    el: "content"
-    continue: false
+router.route "/login",
+  title: "#{APPNAME} - Login"
+  view: LoginView
+  el: "content"
+  continue: false
 
-  app.route "/profile",
-    title: "#{APPNAME} - Profile"
-    view: "pages/Profile/Profile.view"
-    el: "content"
-    continue: false
+router.route "/:id",
+  title: "#{APPNAME} - Profile"
+  view: ProfileView
+  el: "content"
+  continue: false
 
-  app.route '/challenges',
-    title: "#{APPNAME} - Challenges"
-    view: 'pages/Challenges/Index.view'
-    el: 'content'
-    continue: false
+router.route "/",
+  title: "#{APPNAME} - Home"
+  view: IndexView
+  el: "content"
+  continue: false
 
-  app.route "/",
-    title: "#{APPNAME}"
-    view: "pages/Index/Index.view"
-    el: "content"
-    continue: false
+router.use
+  title: "#{APPNAME} - Not found"
+  view: NotFoundView
+  el: "content"
+  continue: false
 
-  app.use
-    title: "#{APPNAME} - Not found"
-    view: "pages/NotFound/NotFound.view"
-    el: "content"
-    continue: false
-
-  return app
+module.exports = router

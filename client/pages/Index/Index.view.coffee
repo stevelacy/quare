@@ -1,17 +1,22 @@
-define (require) ->
+React = require "react"
+Fission = require "../../vendor/fission"
+NavbarView = require "../../components/Navbar/View"
+router = require "../../router"
+checkAuth = require "../../checkAuth"
 
-  {div, h1, button, br, span, img, a} = React.DOM
-  Dermis = require 'vendor/dermis'
+{div, h1, button, br, span, img, a} = React.DOM
 
-  Dermis.view
-    goNext: ->
-      page '/profile'
+module.exports = ->
+  checkAuth()
 
+  Fission.view
     render: ->
-      div {className: "main"},
+      div {className: "main index"},
+        NavbarView
+          color: "dark"
+        div {className: "page"},
+          a {className: "button", href: "/53f23c21a23a3a4a1d6c0822"}, "Click me"
+          br {},
+          img {src: "/img/user.png"}
 
-        div {className: "button", onClick: @goNext}, "Click me"
-          img {src: "/img/ripple.png"}
-        div {className: "greytext"},
-          div {}, "A daily challenge to"
-          div {}, "change the world, together."
+          div {}, "This is the index page..."

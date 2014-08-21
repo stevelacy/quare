@@ -1,7 +1,10 @@
-define (require) ->
+Fission = require "../vendor/fission"
 
-  Dermis = require 'vendor/dermis'
-
-  Dermis.model
-    idAttribute: '_id'
-    name: 'User'
+module.exports = Fission.model
+  idAttribute: "_id"
+  #name: "User"
+  url: ->
+    console.log @
+    if @get 'handle'
+      return "#{@url}?handle=#{@get 'handle'}"
+    return "/v1/users"

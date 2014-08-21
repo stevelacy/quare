@@ -1,27 +1,48 @@
-@require 'nib'
-
 @font-face
-   font-family Knockout
-   font-style normal
-   src url("/fonts/Knockout-HTF28-JuniorFeatherwt.otf")
-
-// font anti-aliasing
-// TODO maybe turn off if the pixel density isnt correct?
-better-font()
+  font-family 'roboto'
+  font-style normal
+  font-weight 200
+  src: local('Roboto'), local('Roboto'), url(../../fonts/roboto.ttf) format('truetype');
+  font-smoothing antialiased
+  text-rendering optimizeLegibility
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
+
+@font-face
+  font-family 'simplifica'
+  font-style normal
+  font-weight 200
+  src: local('Simplifica'), local('Simplifica'), url(../../fonts/simplifica.ttf) format('truetype');
+  font-smoothing antialiased
   text-rendering optimizeLegibility
-  font-feature-settings 'liga', 'kern'
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
 
-// some font stacks
-helvetica()
-  font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif
-  font-weight 300
+@font-face
+  font-family 'trench'
+  font-style normal
+  font-weight 200
+  src: local('Trench'), local('Trench'), url(../../fonts/trench.otf) format('opentype');
+  font-smoothing antialiased
+  text-rendering optimizeLegibility
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
 
-helvetica-thin()
-  font-family 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif
-  font-weight 300
+@font-face
+  font-family 'rodus'
+  font-style normal
+  font-weight 200
+  src: local('Rodus'), local('Rodus'), url(../../fonts/rodus.otf) format('opentype');
+  font-smoothing antialiased
+  text-rendering optimizeLegibility
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
 
-knockout()
-  font-family "Knockout", Arial, Helvetica, sans-serif
-  font-weight 300
+font-roboto()
+  font-family 'Roboto'
+font-trench()
+  font-family 'Trench'
+font-rodus()
+  font-family 'Rodus'
+font-simplifica()
+  font-family 'Simplifica'

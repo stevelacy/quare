@@ -1,14 +1,17 @@
-define (require) ->
+React = require "react"
+Fission = require "../../vendor/fission"
 
-  {img} = React.DOM
-  Dermis = require 'vendor/dermis'
+{img} = React.DOM
 
-  Dermis.view
-    getDefaultProps: -> {size: 200}
-    render: ->
-      retinaSize = @props.size * 2
-      src  = "http://graph.facebook.com/#{@props.user.get('prettyName')}"
-      src += "/picture?width=#{retinaSize}"
-      src += "&height=#{retinaSize}"
+View = Fission.view
+  getDefaultProps: -> {size: 20}
+  render: ->
 
-      @transferPropsTo(img {className: 'profile-pic', src: src})
+    pic = img
+      className: 'profile-pic'
+      src: @props.image
+      height: @props.size
+      width: @props.size
+    @transferPropsTo pic
+
+module.exports = View

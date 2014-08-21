@@ -13,17 +13,10 @@ html
     link(rel='stylesheet' href='/app.css')
 
   body
-    #navbar lol
-    #content.content
+    #content
+    #footer
 
     +js('/serverConfig.js')
-    +js('/vendor/react.js')
-    +js('/vendor/jquery.js')
-    +js('/vendor/lodash.min.js')
-    +js('/vendor/backbone.js')
-    +js('/vendor/moment.js')
-    +js('/vendor/page.js')
-    +js('/vendor/superagent.js')
+    +js('/auth.js')
 
-    // begin app
-    script(data-main='/start.js' src='/vendor/require.js')
+    +js('/start.js')
