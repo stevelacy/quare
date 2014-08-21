@@ -6,7 +6,6 @@ checkAuth = require "../../checkAuth"
 
 {div, h1, button, br, span, img, a} = React.DOM
 
-console.log NavbarView
 module.exports = ->
   checkAuth()
 

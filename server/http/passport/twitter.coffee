@@ -15,7 +15,8 @@ profileToUser = (profile, accessToken) ->
     provider: "twitter"
     token: accessToken
     handle: profile.screen_name
-    image: profile.profile_image_url_https
+    image: profile.profile_image_url_https.replace '_normal', ''
+    background: "#{profile.profile_banner_url}/1500x500"
 
   console.log create
   return create

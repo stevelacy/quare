@@ -16,7 +16,7 @@ router.route "/login",
   el: "content"
   continue: false
 
-router.route "/profile/:id",
+router.route "/:id",
   title: "#{APPNAME} - Profile"
   view: ProfileView
   el: "content"
