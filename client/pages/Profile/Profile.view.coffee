@@ -1,20 +1,34 @@
 React = require "react"
 Fission = require "../../vendor/fission"
+NavbarView = require "../../components/Navbar/View"
+ProfilePicView = require "../../components/ProfilePic/View"
+checkAuth = require "../../checkAuth"
 User = require "../../models/User"
 
-{div, h2, h3, img, p, span, a} = React.DOM
+{div, h1, h2, h3, img, p, span, a} = React.DOM
 
 module.exports = ->
+  checkAuth()
+
+  background = (bg) ->
+    img {className: "background", src: "#{bg}"},
 
   Fission.modelView
     model: User
+    handle: @args.params.user
 
     render: ->
-
-      div {className: "profile"},
-        div {className: "user"},
+      div {className: "main profile"},
+        background @model.get "background"
+        div {className: "shadow"}
+        NavbarView
+          color: "dark"
+        div {className: "user-box"},
           div {className: "image"},
-            img {src: "#{@model.get('image')}"},
+            ProfilePicView
+              image: @model.get "image"
+              size: 200
+
           div {className: "info"},
-            h2 {}, "#{@model.get('name')}"
-            h3 {}, "@#{@model.get('handle')}"
+            h1 {}, "#{@model.get 'name' }"
+            h2 {}, "@#{@model.get 'handle' }"

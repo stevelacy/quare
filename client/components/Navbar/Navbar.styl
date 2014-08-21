@@ -1,0 +1,28 @@
+@require 'nib'
+@require '../../css/mixins/aligns'
+@require '../../css/mixins/fonts'
+@import '../../css/imports/colors'
+
+.navbar
+  position relative
+  height 75px
+  width 100%
+  .logo
+    margin-left 5%
+    font-trench()
+    font-size 50px
+    width 200px
+  a:hover
+    text-decoration none
+
+  &.light
+    .logo
+      color white
+
+  &.dark
+    .logo
+      color black
+
+  .right
+    absolute right 5px top 5px
+
