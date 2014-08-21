@@ -1,6 +1,10 @@
 path = require "path"
 gulp = require "gulp"
-gutil = require "gulp-util"
+
+source     = require 'vinyl-source-stream'
+buffer     = require 'vinyl-buffer'
+coffeeify  = require 'coffeeify'
+browserify   = require 'browserify'
 
 jade = require "gulp-jade"
 csso = require "gulp-csso"
@@ -13,24 +17,17 @@ concat = require "gulp-concat"
 plumber = require "gulp-plumber"
 reload = require "gulp-livereload"
 htmlmin = require "gulp-minify-html"
-coffeeify = require "gulp-coffeeify"
 
+gutil = require "gulp-util"
 gif = require "gulp-if"
 sourcemaps = require "gulp-sourcemaps"
+
+
 
 nib = require "nib"
 autoprefixer = require "autoprefixer-stylus"
 autowatch = require "gulp-autowatch"
 
-cssSupport = [
-  "last 5 versions"
-  "> 1%"
-  "ie 8"
-  "ie 7"
-  "Android"
-  "Android 4"
-  "BlackBerry 10"
-]
 
 # paths
 paths =
@@ -47,14 +44,20 @@ gulp.task "server", (cb) ->
 
 # javascript
 gulp.task "coffee", ->
-  gulp.src paths.coffeeSrc
-    .pipe sourcemaps.init()
-    .pipe plumber()
-    .pipe gif gutil.env.production, uglify()
-    .pipe coffeeify()
-    .pipe sourcemaps.write()
-    .pipe gulp.dest "./public"
-    .pipe reload()
+  bCache = {}
+  b = browserify paths.coffeeSrc,
+    debug: true
+    insertGlobals: true
+    cache: bCache
+    extensions: ['.coffee']
+  b.transform coffeeify
+  b.bundle()
+  .pipe source "start.js"
+  .pipe buffer()
+  .pipe plumber()
+  .pipe gif gutil.env.production, uglify()
+  .pipe gulp.dest "./public"
+  .pipe reload()
 
 # styles
 gulp.task "stylus", ->
@@ -63,7 +66,7 @@ gulp.task "stylus", ->
     .pipe stylus
       use:[
         nib()
-        autoprefixer cssSupport, cascade: true
+        autoprefixer cascade: true
       ]
     .pipe concat "app.css"
     .pipe sourcemaps.write()
