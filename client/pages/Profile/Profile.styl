@@ -1,7 +1,7 @@
 @require 'nib'
 @require '../../css/mixins/background'
 @require '../../css/mixins/aligns'
-@require '../../css/mixins/fonts'
+@require '../../css/mixins/trans'
 @import '../../css/imports/colors'
 
 .main
@@ -28,4 +28,7 @@
       margin-left 25%
       .image
         img
+          trans-all(0.3)
           box-shadow 0 0 10px rgba(100, 100, 100, .5)
+          &:hover
+            box-shadow 0 0 20px rgba(100, 100, 100, .3)
