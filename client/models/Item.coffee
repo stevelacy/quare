@@ -1,8 +1,8 @@
+Fission = require "../vendor/fission"
+
 module.exports = ->
 
-  Dermis = require "../vendor/dermis"
-
-  Dermis.model
+  Fission.model
     idAttribute: "_id"
     name: "Item"
     url: "/test.json"

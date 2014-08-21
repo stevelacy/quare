@@ -1,15 +1,33 @@
-@import 'nib'
-@import './mixins/fonts'
-@import './imports/reset'
-@import './imports/colors'
+@require 'mixins/reset'
+@require 'mixins/fonts'
+*
+  reset()
+
+*, *:before, *:after
+  reset()
 
 html, body
-  better-font()
-  helvetica()
-  background-color grey-light
-  color grey-dark
-  font-size 1em
-  line-height 1.4
+  height 100vh
+  width 100%
+  overflow-x hidden
+body
+  font-roboto()
 
-@import './imports/buttons'
-@import './imports/header'
+
+// Global styles
+@import 'imports/colors'
+
+a
+  text-decoration none
+  color blue
+  &:hover
+    text-decoration underline
+
+.main
+  height 100vh
+  width 100%
+
+
+@import 'imports/classes'
+@import 'imports/buttons'
+@import 'imports/extras'

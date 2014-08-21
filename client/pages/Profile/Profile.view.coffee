@@ -1,21 +1,34 @@
-module.exports = ->
-  {div, h2, h3, img, p, span, a} = React.DOM
-  Dermis = require "../../vendor/dermis"
-  ProfileModel = require "../../models/User"
+React = require "react"
+Fission = require "../../vendor/fission"
+NavbarView = require "../../components/Navbar/View"
+ProfilePicView = require "../../components/ProfilePic/View"
+checkAuth = require "../../checkAuth"
+User = require "../../models/User"
 
-  Dermis.view
-    model: ProfileModel
+{div, h1, h2, h3, img, p, span, a} = React.DOM
+
+module.exports = ->
+  checkAuth()
+
+  background = (bg) ->
+    img {className: "background", src: "#{bg}"},
+
+  Fission.modelView
+    model: User
+    handle: @args.params.user
 
     render: ->
+      div {className: "main profile"},
+        background @model.get "background"
+        div {className: "shadow"}
+        NavbarView
+          color: "dark"
+        div {className: "user-box"},
+          div {className: "image"},
+            ProfilePicView
+              image: @model.get "image"
+              size: 200
 
-      div {className: "profile-page"},
-
-        div {className: "block user-details"},
-          div {className: "user-photo"},
-            img {src: "/img/demo/user-1.jpg"}
-          div {className: "user-info"},
-            div {className: "padder"},
-              h3 {}, "Carson Linforth Bowley"
-              p {className: "location"}, "San Francisco"
-              p {className: "impact-score"},
-                span {}, "Items: #{@model}"
+          div {className: "info"},
+            h1 {}, "#{@model.get 'name' }"
+            h2 {}, "@#{@model.get 'handle' }"

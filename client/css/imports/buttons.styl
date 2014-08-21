@@ -1,10 +1,37 @@
-.button
-  background rgba(200, 200, 200, .5)
-  color #fff
-  border-radius 5px
-  border 1px solid rgba(200, 200, 200, .8)
-  font-weight bold
-  font-size 12px
+@import './colors'
+button, .button
+  border none
+  background whiteDarkShade
   padding 10px
-  letter-spacing 2px
-  margin 5px
+  outline none
+  font-size 16px
+
+  // Sizes
+  &.large
+    padding 20px
+    font-size 22px
+  &.wide
+    padding-left 40px
+    padding-right 40px
+
+  // Actions
+  &:hover
+    background darken(whiteDarkShade, 10)
+    text-decoration none
+
+  // Colors
+  &.green
+    background green
+    color white
+    &:hover
+      background darken(green, 10)
+  &.red
+    background red
+    color white
+    &:hover
+      background darken(red, 10)
+  &.blue
+    background blue
+    color white
+    &:hover
+      background darken(blue, 10)
