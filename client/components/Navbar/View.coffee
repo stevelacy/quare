@@ -7,9 +7,13 @@ ProfilePicView = require "../../components/ProfilePic/View"
 
 View = Fission.view
   render: ->
-    color = "light"
-    if @props?.color is "dark" then color = "dark"
-    div {className: "navbar #{color}"},
+    @props?.color ?= "light"
+    @props?.background ?= ""
+
+    style =
+      className: "navbar #{@props?.color} #{@props?.background}"
+
+    div style,
       a {href: "/"},
         div {className: "logo"}, "Quare"
       div {className: "right"},

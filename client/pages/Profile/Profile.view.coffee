@@ -18,16 +18,18 @@ module.exports = ->
     handle: @args.params.user
 
     render: ->
+      return div {} unless @model.get "handle"
       div {className: "main profile"},
         background @model.get "background"
         div {className: "shadow"}
         NavbarView
-          color: "dark"
+          color: "light"
+          background: "bg-dark"
         div {className: "user-box"},
           div {className: "image"},
             ProfilePicView
               image: @model.get "image"
-              size: 200
+              size: 300
 
           div {className: "info"},
             h1 {}, "#{@model.get 'name' }"
