@@ -4,6 +4,7 @@ NotFoundView = require "./pages/NotFound/NotFound.view"
 ProfileView = require "./pages/Profile/Profile.view"
 IndexView = require "./pages/Index/Index.view"
 LoginView = require "./pages/Login/Login.view"
+ItemsView = require "./pages/Items/Items.view"
 
 NavbarView = require "./components/Navbar/View"
 
@@ -13,6 +14,12 @@ APPNAME = _serverConfig.name
 router.route "/login",
   title: "#{APPNAME} - Login"
   view: LoginView
+  el: "content"
+  continue: false
+
+router.route "/items",
+  title: "#{APPNAME} - Items"
+  view: ItemsView
   el: "content"
   continue: false
 

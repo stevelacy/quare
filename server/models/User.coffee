@@ -1,19 +1,6 @@
 {Schema} = require "mongoose"
 
 
-noWrite = ->
-  perms =
-    read: true
-    write: false
-  return perms
-
-hidden = ->
-  perms =
-    read: false
-    write: false
-  return perms
-
-
 User = new Schema
   auth:
     type: Number

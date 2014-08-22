@@ -2,13 +2,12 @@ React = require "react"
 Fission = require "../../vendor/fission"
 NavbarView = require "../../components/Navbar/View"
 ProfilePicView = require "../../components/ProfilePic/View"
-checkAuth = require "../../checkAuth"
 User = require "../../models/User"
 
 {div, h1, h2, h3, img, p, span, a} = React.DOM
 
 module.exports = ->
-  checkAuth()
+  return window.location = "/login" unless window._user?
 
   background = (bg) ->
     img {className: "background", src: "#{bg}"},

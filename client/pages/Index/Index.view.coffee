@@ -2,12 +2,11 @@ React = require "react"
 Fission = require "../../vendor/fission"
 NavbarView = require "../../components/Navbar/View"
 router = require "../../router"
-checkAuth = require "../../checkAuth"
 
 {div, h1, button, br, span, img, a} = React.DOM
 
 module.exports = ->
-  checkAuth()
+  return window.location = "/login" unless window._user?
 
   Fission.view
     render: ->

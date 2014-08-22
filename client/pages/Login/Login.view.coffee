@@ -15,7 +15,8 @@ module.exports = ->
         NavbarView
           color: "light"
         div {className: "page"},
+          div {className: "login"},
 
-          div {className: "logo white"}, "Login"
-          div {className: "spacer-50"}
-          button {className: "button blue large wide center", onClick: @twitter}, "TWITTER"
+            div {className: "logo white"}, "Login to get started"
+            div {className: "spacer-50"}
+            button {className: "button blue large wide center", onClick: @twitter}, "TWITTER"
