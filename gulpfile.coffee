@@ -1,4 +1,3 @@
-path = require "path"
 gulp = require "gulp"
 
 source     = require 'vinyl-source-stream'
@@ -9,7 +8,6 @@ browserify   = require 'browserify'
 jade = require "gulp-jade"
 csso = require "gulp-csso"
 cache = require "gulp-cached"
-jshint = require "gulp-jshint"
 coffee = require "gulp-coffee"
 stylus = require "gulp-stylus"
 uglify = require "gulp-uglify"
