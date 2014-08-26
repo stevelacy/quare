@@ -1,14 +1,13 @@
-module.exports =
+module.exports = 
 
   router: require './router'
 
-  model: require './model'
   view: require './view'
   modelView: require './modelView'
   collectionView: require './collectionView'
-  start: require './start'
 
   createCollection: require './createCollection'
+  model: require './model'
   alias: require './alias'
 
   middleware:
@@ -18,5 +17,3 @@ module.exports =
 
   mixins:
     Listener: require './ListenerMixin'
-
-  React: require 'react'
