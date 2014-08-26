@@ -1,7 +1,10 @@
 Fission = require "../vendor/fission"
 
-module.exports = Fission.model
-  idAttribute: "_id"
-  #name: "Item"
-  url: ->
-    return "/v1/items"
+
+Model = Fission.model
+  mainIndex: "_id"
+  url: "/v1/items"
+  props:
+    name: "string"
+    content: "string"
+module.exports = Model
