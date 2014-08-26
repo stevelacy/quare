@@ -1,10 +1,13 @@
 Fission = require "../vendor/fission"
 
-module.exports = Fission.model
-  idAttribute: "_id"
-  #name: "User"
-  url: ->
-    console.log @
-    if @get 'handle'
-      return "#{@url}?handle=#{@get 'handle'}"
-    return "/v1/users"
+
+
+Model = Fission.model
+  url: "/v1/users"
+  props:
+    auth: "number"
+    handle: "string"
+    name: "string"
+    image: "string"
+    background: "string"
+module.exports = Model
