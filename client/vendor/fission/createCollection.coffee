@@ -19,7 +19,9 @@ module.exports = (model) ->
 
     inst = new model()
 
-    if inst.url?
+    if typeof inst.url is "function"
+      conf.url = inst.url()
+    else
       conf.url = inst.url
 
     col = Collection.extend underscoreMixin, app.sync, conf

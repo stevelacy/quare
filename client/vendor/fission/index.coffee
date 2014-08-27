@@ -5,6 +5,7 @@ module.exports =
   model: require './model'
   view: require './view'
   modelView: require './modelView'
+  itemView: require './itemView'
   collectionView: require './collectionView'
   start: require './start'
 

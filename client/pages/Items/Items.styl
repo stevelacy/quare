@@ -1,2 +1,19 @@
-.items
-  this that
+@require 'nib'
+@require '../../css/mixins/background'
+@require '../../css/mixins/aligns'
+@require '../../css/mixins/trans'
+@import '../../css/imports/colors'
+
+.main
+  &.items
+    full-background('/img/bliss1.jpg')
+    center()
+    .item
+      center()
+      padding 2%
+      background whiteShade
+      box-shadow 0 0 5px grey
+      margin 5%
+      max-width 80%
+      img
+        max-width 100%

@@ -1,13 +1,13 @@
 React = require "react"
 Fission = require "../../vendor/fission"
-Item = require '../../models/Item'
-{div} = React.DOM
+Item = require "../../models/Item"
+{div, img} = React.DOM
 
-
-View = Fission.modelView
+View =  Fission.modelView
   model: Item
   render: ->
-    console.log @model.get "contents"
-    div {}, "that item #{@model.get 'contents'}"
+    div {className: "item"},
+      img {src: @model.get 'content'}
+
 
 module.exports = View
