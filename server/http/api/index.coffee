@@ -7,13 +7,16 @@ users = require "./users"
 items = require "./items"
 item = require "./item"
 
+conf =
+  prefix: "/v1"
+
 # User
-app.get "/v1/users/:id", user.get
-app.route "/v1/users"
+app.get "#{conf.prefix}/users/:id", user.get
+app.route "#{conf.prefix}/users"
 .get users.get
 
 
-app.get "/v1/items/:id", item.get
-app.route "/v1/items"
+app.get "#{conf.prefix}/items/:id", item.get
+app.route "#{conf.prefix}/items"
 .get items.get
 .post items.post
