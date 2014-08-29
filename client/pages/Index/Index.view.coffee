@@ -14,8 +14,9 @@ module.exports = ->
         NavbarView
           color: "dark"
         div {className: "page"},
-          a {className: "button", href: "/53f23c21a23a3a4a1d6c0822"}, "Click me"
           br {},
           img {src: "/img/user.png"}
 
-          div {}, "This is the index page..."
+          a {className: "button", href: "/53f23c21a23a3a4a1d6c0822"}, "Profile"
+          br {}
+          a {className: "button", href: "/items"}, "Items"

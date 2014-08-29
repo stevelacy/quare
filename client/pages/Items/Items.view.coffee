@@ -15,6 +15,8 @@ module.exports = ->
         NavbarView
           color: "light"
           background: "bg-dark"
+        div {className: "new"},
+          div {className: "plus"}, "+"
         @items.map (item) ->
           item
 
