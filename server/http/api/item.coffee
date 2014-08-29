@@ -3,7 +3,7 @@ db = require "../../db"
 Item = db.models.Item
 
 
-module.exports = (req, res) ->
+module.exports.get = (req, res) ->
 
   Item.findOne {_id: req.params.id}, (err, users) ->
 

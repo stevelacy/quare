@@ -3,6 +3,7 @@ express = require "express"
 toobusy = require "toobusy"
 compress = require "compression"
 session = require "express-session"
+bodyParser = require "body-parser"
 sessionStore = require "./sessionStore"
 csrf = require "csurf"
 
@@ -15,6 +16,9 @@ app = express()
 app.disable "x-powered-by"
 app.use compress()
 app.use express.static join __dirname, "../../public"
+
+app.use bodyParser.urlencoded extended: true
+app.use bodyParser.json()
 
 app.use session
   store: sessionStore

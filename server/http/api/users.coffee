@@ -3,7 +3,7 @@ db = require "../../db"
 User = db.models.User
 
 
-module.exports = (req, res) ->
+module.exports.get = (req, res) ->
 
   User.find {}, (err, users) ->
 

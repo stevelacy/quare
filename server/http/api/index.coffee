@@ -8,8 +8,12 @@ items = require "./items"
 item = require "./item"
 
 # User
-app.get "/v1/users/:id", user
-app.get "/v1/users", users
+app.get "/v1/users/:id", user.get
+app.route "/v1/users"
+.get users.get
 
-app.get "/v1/items/:id", item
-app.get "/v1/items", items
+
+app.get "/v1/items/:id", item.get
+app.route "/v1/items"
+.get items.get
+.post items.post
