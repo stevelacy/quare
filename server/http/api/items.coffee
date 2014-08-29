@@ -18,7 +18,7 @@ module.exports =
       content = req.body
       item = new Item content
       item.save (err, data) ->
-        return res.status(500).send error: "error" if err?
+        return res.status(500).send error: "item not created" if err?
         return res.status(200).send status: data
     else
       return res.status(500).send error: "incorrect type"

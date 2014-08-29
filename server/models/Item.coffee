@@ -8,6 +8,7 @@ Item = new Schema
 
   content:
     type: String
+    required: true
 
 
 Item.set "autoindex", false
