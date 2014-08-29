@@ -11,8 +11,7 @@ module.exports = (config) ->
         @items = @collection.map (m) =>
           return @itemView
             model: m
-            key: m._id
-        console.log @items
+            key: m.id
       @forceUpdate()
 
     componentWillMount: ->
@@ -20,8 +19,13 @@ module.exports = (config) ->
       unless @collection?
         ctor = createCollection config.model
         @collection = new ctor
-        @collection.fetch success: =>
-          @renderItems()
+        console.log config.model
+        @collection.fetch
+          success: (data) =>
+            console.log data, 'success'
+            @renderItems()
+          error: (err) =>
+            console.log err, 'error'
 
           @listenTo @collection, 'add change remove', (e) =>
             @renderItems()
