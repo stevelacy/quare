@@ -5,10 +5,14 @@ Item = db.models.Item
 
 module.exports =
   get: (req, res) ->
+    if req.params.id?
+      Item.findOne {_id: req.params.id}, (err, item) ->
+        res.status(200).json item
+    else
+      Item.find {}, (err, users) ->
 
-    Item.find {}, (err, users) ->
+        res.status(200).json users
 
-      res.status(200).json users
   post: (req, res) ->
     if req.body && typeof req.body == 'object'
       content = req.body

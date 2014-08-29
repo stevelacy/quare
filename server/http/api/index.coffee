@@ -1,22 +1,17 @@
 {join} = require "path"
+requireDir = require "require-dir"
 
 app = require "../express"
 
-user = require "./user"
-users = require "./users"
-items = require "./items"
-item = require "./item"
+routes = requireDir()
 
 conf =
   prefix: "/v1"
 
-# User
-app.get "#{conf.prefix}/users/:id", user.get
-app.route "#{conf.prefix}/users"
-.get users.get
-
-
-app.get "#{conf.prefix}/items/:id", item.get
-app.route "#{conf.prefix}/items"
-.get items.get
-.post items.post
+for route of routes
+  if routes[route].get
+    app.get "#{conf.prefix}/#{route}/:id", routes[route].get
+    app.get "#{conf.prefix}/#{route}", routes[route].get
+  if routes[route].post
+    app.post "#{conf.prefix}/#{route}/:id", routes[route].post
+    app.post "#{conf.prefix}/#{route}", routes[route].post

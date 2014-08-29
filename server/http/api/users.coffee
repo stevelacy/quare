@@ -5,6 +5,11 @@ User = db.models.User
 
 module.exports.get = (req, res) ->
 
-  User.find {}, (err, users) ->
+  if req.params.id?
+    User.findOne {_id: req.params.id}, (err, user) ->
+      res.status(200).json user
 
-    res.status(200).json users
+  else
+    User.find {}, (err, users) ->
+
+      res.status(200).json users
