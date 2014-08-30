@@ -7,6 +7,7 @@
     "ampersand-collection-underscore-mixin": "^1.0.1",
     "ampersand-model": "^4.0.1",
     "backbone": "^1.1.2",
+    "body-parser": "^1.6.6",
     "bunyan": "^1.0.0",
     "compression": "^1.0.10",
     "csurf": "^1.4.0",
