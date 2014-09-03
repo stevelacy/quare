@@ -2,7 +2,6 @@ fission = require "../app"
 
 
 Model = fission.model
-  mainIndex: "_id"
   idAttribute: "_id"
   url: "/v1/items"
   props:
