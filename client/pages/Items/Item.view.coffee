@@ -4,9 +4,12 @@ Item = require "../../models/Item"
 
 View =  fission.modelView
   model: Item
+  remove: ->
+    console.log 'destroy'
+    @model.destroy()
   render: ->
     div {className: "item"},
-      img {src: @model.get 'content'}
+      img {onClick: @remove, src: @model.get 'content'}
 
 
 module.exports = View

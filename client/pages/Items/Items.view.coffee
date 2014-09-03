@@ -15,9 +15,8 @@ module.exports = ->
       if e.which == 27
         return @setState isOpen: !@state.isOpen
       if e.which == 13
-        item = new Item
+        @collection.create
           content: @state.url
-        item.save()
         return @setState isOpen: false
 
     handleChange: (e) ->
