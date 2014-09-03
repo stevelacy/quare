@@ -1,7 +1,7 @@
-Fission = require "../vendor/fission"
+fission = require "../app"
 
 
-Model = Fission.model
+Model = fission.model
   mainIndex: "_id"
   idAttribute: "_id"
   url: "/v1/items"

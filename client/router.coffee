@@ -1,4 +1,4 @@
-{router, middleware} = require "./vendor/fission"
+{router} = require './app'
 
 NotFoundView = require "./pages/NotFound/NotFound.view"
 ProfileView = require "./pages/Profile/Profile.view"

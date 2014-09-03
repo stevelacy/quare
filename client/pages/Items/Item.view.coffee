@@ -1,9 +1,8 @@
-React = require "react"
-Fission = require "../../vendor/fission"
+fission = require "../../app"
 Item = require "../../models/Item"
-{div, img} = React.DOM
+{div, img} = fission.React.DOM
 
-View =  Fission.modelView
+View =  fission.modelView
   model: Item
   render: ->
     div {className: "item"},

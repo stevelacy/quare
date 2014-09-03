@@ -1,12 +1,11 @@
-React = require "react"
-Fission = require "../../vendor/fission"
+fission = require "../../app"
 NavbarView = require "../../components/Navbar/View"
 
-{div, i, p, a} = React.DOM
+{div, i, p, a} = fission.React.DOM
 
 module.exports = ->
 
-  Fission.view
+  fission.view
     render: ->
       div {className: "main not-found"},
         NavbarView()

@@ -1,13 +1,11 @@
-page = require "page"
-React = require "react"
-Fission = require "../../vendor/fission"
+fission = require "../../app"
 NavbarView = require "../../components/Navbar/View"
 
-{div, h1, button, a, img, br} = React.DOM
+{div, h1, button, a, img, br} = fission.React.DOM
 
 module.exports = ->
 
-  Fission.view
+  fission.view
     twitter: ->
       window.location = "/auth/twitter"
     render: ->

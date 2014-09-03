@@ -1,7 +1,7 @@
-Fission = require "../vendor/fission"
+fission = require "../app"
 
 
-Model = Fission.model
+Model = fission.model
   url: "/v1/users"
   props:
     auth: "number"

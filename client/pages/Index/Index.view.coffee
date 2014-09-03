@@ -1,14 +1,12 @@
-React = require "react"
-Fission = require "../../vendor/fission"
+fission = require "../../app"
 NavbarView = require "../../components/Navbar/View"
-router = require "../../router"
 
-{div, h1, button, br, span, img, a} = React.DOM
+{div, h1, button, br, span, img, a} = fission.React.DOM
 
 module.exports = ->
   return window.location = "/login" unless window._user?
 
-  Fission.view
+  fission.view
     render: ->
       div {className: "main index"},
         NavbarView

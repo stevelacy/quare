@@ -1,10 +1,9 @@
-React = require "react"
-Fission = require "../../vendor/fission"
+fission = require "../../app"
 NavbarView = require "../../components/Navbar/View"
 ProfilePicView = require "../../components/ProfilePic/View"
 User = require "../../models/User"
 
-{div, h1, h2, h3, img, p, span, a} = React.DOM
+{div, h1, h2, h3, img, p, span, a} = fission.React.DOM
 
 module.exports = ->
   return window.location = "/login" unless window._user?
@@ -12,7 +11,7 @@ module.exports = ->
   background = (bg) ->
     img {className: "background", src: "#{bg}"},
 
-  Fission.modelView
+  fission.modelView
     model: User
     handle: @args.params.user
 

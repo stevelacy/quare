@@ -1,11 +1,10 @@
-React = require "react"
-Fission = require "../../vendor/fission"
+fission = require "../../app"
 ProfilePicView = require "../../components/ProfilePic/View"
 
-{header, h1, img, a, div, span, p, button} = React.DOM
+{header, h1, img, a, div, span, p, button} = fission.React.DOM
 
 
-View = Fission.view
+View = fission.view
   render: ->
     @props?.color ?= "light"
     @props?.background ?= ""

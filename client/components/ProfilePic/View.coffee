@@ -1,9 +1,8 @@
-React = require "react"
-Fission = require "../../vendor/fission"
+fission = require "../../app"
 
-{img} = React.DOM
+{img} = fission.React.DOM
 
-View = Fission.view
+View = fission.view
   getDefaultProps: -> {size: 20}
   render: ->
 

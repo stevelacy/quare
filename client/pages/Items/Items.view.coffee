@@ -1,13 +1,12 @@
-React = require "react"
-Fission = require "../../vendor/fission"
+fission = require "../../app"
 NavbarView = require "../../components/Navbar/View"
 Item = require "../../models/Item"
 ItemView = require "./Item.view"
-{div, input} = React.DOM
+{div, input} = fission.React.DOM
 
 module.exports = ->
   return window.location = "/login" unless window._user?
-  Fission.collectionView
+  fission.collectionView
     model: Item
     itemView: ItemView
     getInitialState: ->
