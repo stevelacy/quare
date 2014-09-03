@@ -66,6 +66,8 @@ gulp.task "stylus", ->
         nib()
         autoprefixer cascade: true
       ]
+      sourcemap:
+        inline: true
     .pipe concat "app.css"
     .pipe sourcemaps.write()
     .pipe gif gutil.env.production, csso()
