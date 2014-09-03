@@ -1,11 +1,10 @@
 Collection = require 'ampersand-collection'
 underscoreMixin = require 'ampersand-collection-underscore-mixin'
-app = {}
 
 module.exports = (model) ->
 
-  if !app.sync?
-    app.sync = require 'ampersand-collection-rest-mixin'
+  unless model.sync?
+    model.sync = require 'ampersand-collection-rest-mixin'
 
   # just a collection wrapper
   if model.isCollection
@@ -18,16 +17,9 @@ module.exports = (model) ->
       model: model
 
     inst = new model()
+    conf.url = inst.url()
 
-    if typeof inst.url is "function"
-      conf.url = inst.url()
-    else
-      conf.url = inst.url
-
-    col = Collection.extend underscoreMixin, app.sync, conf
-
-      # TODO deal with sync option translation
-      #url: inst.urlRoot
+    col = Collection.extend underscoreMixin, model.sync, conf
 
   #else
   #  throw new Error "fission#createCollection: Model or Collection specified invalid: #{model}"

@@ -1,5 +1,4 @@
 ListenerMixin = require './ListenerMixin'
-view = require './view'
 
 module.exports = (config) ->
 
@@ -15,11 +14,7 @@ module.exports = (config) ->
         @model.id = @props.params.id
         @listenTo @model, 'change', =>
           @forceUpdate()
-        @model.fetch
-          success: (data) ->
-            console.log data
-          error: (data) ->
-            console.log data
+        @model.fetch()
 
   # validate the options given
   unless config.model?
@@ -27,4 +22,4 @@ module.exports = (config) ->
 
   config.mixins ?= []
   config.mixins.push ModelViewMixin
-  return view config
+  return @view config

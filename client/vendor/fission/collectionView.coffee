@@ -1,11 +1,8 @@
-Collection = require 'ampersand-collection'
-underscoreMixin = require 'ampersand-collection-underscore-mixin'
-Sync = require 'ampersand-collection-rest-mixin'
-
-view = require './view'
 ListenerMixin = require './ListenerMixin'
 
 module.exports = (config) ->
+
+  ctor = @createCollection config.model
 
   CollectionViewMixin =
     mixins: [ListenerMixin]
@@ -20,18 +17,6 @@ module.exports = (config) ->
     componentWillMount: ->
       @items ?= []
       unless @collection?
-        console.log @
-        model = config.model
-        unless model.sync?
-          model.sync = Sync
-        if model.isCollection
-          ctor = Collection.extend model
-        else
-          conf =
-            model: model
-          inst = new model()
-          conf.url = inst.url()
-          ctor = Collection.extend underscoreMixin, model.sync, conf
         @collection = new ctor
         @collection.fetch
           success: (data) =>
@@ -53,4 +38,4 @@ module.exports = (config) ->
 
   config.mixins ?= []
   config.mixins.push CollectionViewMixin
-  return view config
+  return @view config
