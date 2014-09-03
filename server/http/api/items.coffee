@@ -22,3 +22,6 @@ module.exports =
         return res.status(200).send status: data
     else
       return res.status(500).send error: "incorrect type"
+  del: (req, res) ->
+    res.status(200).send 'OK'
+    console.log req.body

@@ -15,3 +15,6 @@ for route of routes
   if routes[route].post
     app.post "#{conf.prefix}/#{route}/:id", routes[route].post
     app.post "#{conf.prefix}/#{route}", routes[route].post
+  if routes[route].del
+    app.del "#{conf.prefix}/#{route}/:id", routes[route].del
+    app.del "#{conf.prefix}/#{route}", routes[route].del
