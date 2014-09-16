@@ -35,7 +35,7 @@ router.route "/",
   el: "content"
   continue: false
 
-router.use
+router.route '*',
   title: "#{APPNAME} - Not found"
   view: NotFoundView
   el: "content"

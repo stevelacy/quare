@@ -1,4 +1,4 @@
-Fission = require './vendor/fission'
+Fission = require 'fission'
 
 fission = new Fission()
 
