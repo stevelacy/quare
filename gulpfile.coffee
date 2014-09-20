@@ -1,9 +1,9 @@
 gulp = require "gulp"
 
-source     = require 'vinyl-source-stream'
-buffer     = require 'vinyl-buffer'
-coffeeify  = require 'coffeeify'
-browserify   = require 'browserify'
+source     = require "vinyl-source-stream"
+buffer     = require "vinyl-buffer"
+coffeeify  = require "coffeeify"
+browserify   = require "browserify"
 
 jade = require "gulp-jade"
 csso = require "gulp-csso"
