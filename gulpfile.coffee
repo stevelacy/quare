@@ -47,7 +47,7 @@ gulp.task "coffee", ->
     debug: true
     insertGlobals: true
     cache: bCache
-    extensions: ['.coffee']
+    extensions: [".coffee"]
   b.transform coffeeify
   b.bundle()
   .pipe source "start.js"
